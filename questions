@@ -1,0 +1,70 @@
+-- Question #1 --
+--Which songs appeared on the Billboard 100 for the first time?--
+SELECT song, wks_on_chart as count
+FROM public.billboard100
+WHERE wks_on_chart = 1;
+
+
+-- Question #2 --
+--What albums were in the 90th percentile number of songs?--
+SELECT album, number_of_songs
+FROM public.albums100
+WHERE number_of_songs >=
+ (
+ SELECT PERCENTILE_CONT(.9)
+ WITHIN GROUP (ORDER BY number_of_songs)
+ FROM public.albums100
+ )
+ORDER BY number_of_songs DESC
+
+
+-- Question #3 --
+--What is the average number of weeks on the Billboard Hot 100 chart
+--for albums released by artists who have released at least 5 albums?
+SELECT AVG(billboard100.wks_on_chart)
+AS avg_weeks_on_chart
+FROM public.albums100
+JOIN public.artists100 ON artists100.artist=albums100.artist
+JOIN public.billboard100 ON albums100.album=billboard100.album
+WHERE artists100.number_of_albums >= 5
+
+
+-- Question #4 --
+-- What are the top 10 artists with the highest number of weeks 
+-- on the chart for their holiday songs? --
+SELECT billboard100.artist,
+ billboard100.song,
+ SUM(billboard100.wks_on_chart) AS total_weeks_on_chart
+FROM public.billboard100
+JOIN public.albums100 ON billboard100.album = albums100.album
+JOIN public.artists100 ON billboard100.artist = artists100.artist
+WHERE genre = 'Holiday'
+GROUP BY billboard100.artist, billboard100.song
+ORDER BY total_weeks_on_chart DESC
+LIMIT 10;
+
+
+--Question #5 --
+--How many times does an artist appear on the Billboard for this week's top 100 and
+-- how many songs are in their album on average?--
+SELECT 
+ albums100.artist,
+ count(DISTINCT billboard100.song) AS songs_on_billboard,
+ AVG(albums100.number_of_songs) AS total_album_songs
+FROM public.albums100
+LEFT JOIN public.billboard100 ON albums100.artist = billboard100.artist
+GROUP BY albums100.artist
+ORDER BY songs_on_billboard DESC;
+
+
+--Question #6--
+-- Which artist has the highest average peak position of their songs on the
+-- Billboard 100 chart?
+SELECT artist, AVG(peak_pos) AS avg_peak_position
+FROM (
+ SELECT artist, peak_pos
+ FROM public.billboard100
+) AS test
+GROUP BY artist
+ORDER BY avg_peak_position DESC
+LIMIT 1;
