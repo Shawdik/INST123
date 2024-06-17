@@ -1,0 +1,736 @@
+--
+-- PostgreSQL database dump
+--
+-- Dumped from database version 16.1
+-- Dumped by pg_dump version 16.1
+-- Started on 2024-05-07 13:31:18 EDT
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+--
+-- TOC entry 217 (class 1259 OID 16924)
+-- Name: albums100; Type: TABLE; Schema: public; Owner: -
+--
+CREATE TABLE public.albums100 (
+ album text NOT NULL,
+ artist text,
+ year_released bigint,
+ number_of_songs bigint
+);
+--
+-- TOC entry 216 (class 1259 OID 16894)
+-- Name: artists100; Type: TABLE; Schema: public; Owner: -
+--
+CREATE TABLE public.artists100 (
+ artist text NOT NULL,
+ first_album_year bigint,
+ last_album_year bigint,
+ number_of_albums bigint
+);
+--
+-- TOC entry 215 (class 1259 OID 16879)
+-- Name: billboard100; Type: TABLE; Schema: public; Owner: -
+--
+CREATE TABLE public.billboard100 (
+ rank bigint NOT NULL,
+ song text,
+ album text,
+ artist text,
+ genre text,
+ peak_pos bigint,
+ wks_on_chart bigint
+);
+--
+-- TOC entry 3623 (class 0 OID 16924)
+-- Dependencies: 217
+-- Data for Name: albums100; Type: TABLE DATA; Schema: public; Owner: -
+--
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Rockin'' Around The Christmas Tree', 'Brenda Lee', 1958, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Merry Christmas', 'Mariah Carey', 1994, 10);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Jingle Bell Rock/Captian Santa Claus', 'Bobby Helms', 1957, 2);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Last-Christmas - Single', 'Wham!', 1984, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Have a Holly Jolly Christmas', 'Burl Ives', 1965, 12);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Music from the Edge of Heaven', 'Wham!', 1986, 8);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Lovin On Me', 'Jack Harlow', 2023, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('A Christmas Gift for You from Phil Spector', 'The Ronettes', 1963, 13);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Christmas Kisses', 'Ariana Grande', 2013, 2);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('The Christmas Song', 'Nat King Cole', 1946, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Wrapped in Red', 'Kelly Clarkson', 2013, 14);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('A Jolly Christmas from Frank Sinatra', 'Frank Sinatra With The Orchestra & Chorus
+Of Gordon Jenkins', 1957, 12);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Elvis'' Christmas Album', 'Elvis Presley', 1957, 12);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Lover', 'Taylor Swift', 2019, 18);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Boogie Woogie Santa Claus', 'Eartha Kitt With Henri Rene And His Orchestra',
+1953, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('St. Louis to Liverpool', 'Chuck Berry', 1964, 12);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Christmas', 'Michael Buble', 2011, 16);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('The Beach Boys'' Christmas Album', 'The Beach Boys', 1964, 25);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('McCartney II', 'Paul McCartney', 1980, 11);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Eagles'' Greatest Hits, Vol. 2', 'Eagles', 1982, 9);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Christmas Album', 'Jackson 5', 1970, 11);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Quiet, Heavy Dreams', 'Zach Bryan Featuring Kacey Musgraves', 2020, 6);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Tyla', 'Tyla', 2024, 14);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Dr. Seuss'' How the Grinch Stole Christmas!', 'Thurl Ravenscroft', 1966, 5);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Donny Hathaway', 'Donny Hathaway', 1971, 9);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Planet Her', 'Doja Cat', 2021, 14);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Under the Mistletoe', 'Justin Bieber', 2011, 11);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('The Andy Williams Christmas Album', 'Andy Williams', 1963, 12);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('A Charlie Brown Christmas', 'Vince Guaraldi Trio', 1965, 12);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Like It''s Christmas - Single', 'Jonas Brothers', 2019, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Some Time in New York City', 'John & Yoko/The Plastic Ono Band With The Harlem
+Community Choir', 1972, 16);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Jackson 5 Christmas Album', 'Jackson 5', 1970, 11);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Dangerous: The Double Album', 'Morgan Wallen', 2020, 30);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Rudolph the Red-Nosed Reindeer and Other Christmas Classics', 'Gene Autry & The
+Pinafores', 1947, 18);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Ed Sheeran - Elton John: Merry Christmas - Single', 'Ed Sheeran & Elton John',
+2021, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('What You See Is What You Get', 'Luke Combs', 2019, 7);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Unlearning EP', 'Teddy Swims', 2021, 7);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Season''s Greetings from Perry Como', 'Perry Como With Mitchell Ayers And His
+Orchestra', 1959, 9);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Lil Boo Thang - Single', 'Paul Russell', 2023, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Certified Lover Boy', 'Drake Featuring Sexyy Red & SZA', 2021, 21);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Pink Friday', 'Nicki Minaj', 2010, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Stick Season - Single', 'Noah Kahan', 2022, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Beam Me Up Scotty', 'Nicki Minaj Featuring Lil Uzi Vert', 2009, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Starting Over', 'Chris Stapleton', 2020, 14);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Plastic Hearts', 'Miley Cyrus', 2020, 15);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Future Nostalgia: The Moonlight Edition', 'Dua Lipa', 2021, 13);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Good Good - Single', 'Usher, Summer Walker & 21 Savage', 2023, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Kinfolk 2: See The Birds', 'Nate Smith', 2021, 11);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('La Diabla - Single', 'Xavi', 2023, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Pretty Little Poison - Single', 'Warren Zeiders', 2023, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Jaguar', 'Victoria Monet', 2020, 9);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Laurel Hell', 'Mitski', 2022, 11);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Too Young to Be Sad', 'Tate McRae', 2021, 6);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('The Forever Story', 'JID Featuring 21 Savage & Baby Tate', 2022, 15);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('El Último Tour Del Mundo', 'Bad Bunny', 2020, 16);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Strangers - Single', 'Kenya Grace', 2024, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('SOUR', 'Olivia Rodrigo', 2021, 11);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Harley Quinn - Single', 'Fuerza Regida & Marshmello', 2023, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Wild Ones - Single', 'Jessie Murph & Jelly Roll', 2023, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Bellakeo - Single', 'Peso Pluma & Anitta', 2023, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('A Rock', 'HARDY', 2020, 12);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Good Things', 'Dan + Shay', 2021, 12);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('A Very Trainor Christmas', 'Meghan Trainor', 2020, 18);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('La Victima - Single', 'Xavi', 2023, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('What You See Ain''t Always What You Get', 'Luke Combs', 2020, 23);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Qlona - Single', 'Karol G & Peso Pluma', 2023, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Red (Taylor''s Version)', 'Taylor Swift', 2021, 30);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('500lbs - Single', 'Lil Tecca', 2023, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('The Double Album', 'Cody Johnson', 2021, 18);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Ice Baby', 'Flo Milli', 2022, 17);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Gold Chain Cowboy', 'Parker McCollum', 2021, 10);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Cover', 'Chloe', 2023, 14);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Don Juan', 'Maluma & Carin Leon', 2023, 25);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Pink Friday 2', 'Nicki Minaj Featuring Drake', 2023, 22);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Mind on You', 'George Birge', 2023, 10);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('The Party Never Ends', 'Juice WRLD, Eminem & benny blanco', 2021, 7);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Zach Bryan', 'Zach Bryan Featuring The War And Treaty', 2023, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Emails I Can''t Send', 'Sabrina Carpenter', 2022, 13);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('The Hunger Games: The Ballad of Songbirds & Snakes', 'Olivia Rodrigo', 2023, 17);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('El Comienzo', 'Grupo Frontera & Grupo Firme', 2023, 11);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Golden', 'Jung Kook', 2023, 11);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Single', 'Morgan Wallen Featuring Eric Church', 2021, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Gueri', 'Calle 24 x Chino Pacas x Fuerza Regida', 2023, 1);
+INSERT INTO public.albums100 (album, artist, year_released, number_of_songs) VALUES
+('Nostalgia', 'Rod Wave', 2023, 21);
+--
+-- TOC entry 3622 (class 0 OID 16894)
+-- Dependencies: 216
+-- Data for Name: artists100; Type: TABLE DATA; Schema: public; Owner: -
+--
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Brenda Lee', 1960, 2007, 35);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Mariah Carey', 1990, 2018, 15);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Bobby Helms', 1957, 1983, 5);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Wham!', 1983, 1986, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Burl Ives', 1941, 2003, 99);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Jack Harlow', 2020, 2023, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('The Ronettes', 1963, 2017, 7);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Ariana Grande', 2013, 2024, 7);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Nat King Cole', 1945, 2014, 29);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Kelly Clarkson', 2003, 2023, 10);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Bing Crosby With Ken Darby Singers & John Scott Trotter
+& His Orchestra', 1939, 1977, 71);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Darlene Love', 1988, 2015, 5);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Frank Sinatra With The Orchestra & Chorus Of Gordon
+Jenkins', 1946, 1994, 59);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Elvis Presley', 1956, 1977, 22);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Taylor Swift', 2006, 2020, 15);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Eartha Kitt With Henri Rene And His Orchestra', 1932,
+2021, 89);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Gene Autry', 1957, 2017, 18);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Chuck Berry', 2003, 2020, 10);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Michael Buble', 2021, 2021, 1);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Tate McRae', 1962, 2018, 30);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('The Beach Boys', 1970, 2020, 26);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Paul McCartney', 1945, 2020, 41);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Perry Como And The Fontane Sisters With Mitchell Ayres
+And His Orchestra', 1972, 2021, 12);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Eagles', 2014, 2021, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Doja Cat', 1969, 2020, 24);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Jackson 5', 2019, 2021, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Zach Bryan Featuring Kacey Musgraves', 2018, 2021, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Tyla', 1955, 2013, 4);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Thurl Ravenscroft', 1970, 2014, 9);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Donny Hathaway', 2018, 2021, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Morgan Wallen', 2009, 2021, 9);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Justin Bieber', 1956, 2009, 46);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Andy Williams', 1955, 2021, 26);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Vince Guaraldi Trio', 2006, 2019, 10);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Jonas Brothers', 1968, 2010, 5);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('John & Yoko/The Plastic Ono Band With The Harlem
+Community Choir', 2011, 2021, 4);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Gene Autry & The Pinafores', 2014, 2019, 2);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Ed Sheeran & Elton John', 2020, 2021, 1);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Luke Combs', 1983, 2021, 8);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Teddy Swims', 2009, 2021, 7);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Perry Como With Mitchell Ayers And His Orchestra', 2010,
+2021, 4);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Paul Russell', 2018, 2021, 1);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Drake Featuring Sexyy Red & SZA', 2015, 2020, 4);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Nicki Minaj', 2007, 2020, 7);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Noah Kahan', 2017, 2020, 2);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Nicki Minaj Featuring Lil Uzi Vert', 1994, 2021, 9);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Chris Stapleton', 2009, 2021, 7);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Drake Featuring J. Cole', 2007, 2020, 7);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Miley Cyrus', 2017, 2020, 7);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Dua Lipa', 2017, 2020, 2);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Usher, Summer Walker & 21 Savage', 2008, 2022, 4);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Nate Smith', 2019, 2023, 2);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Xavi', 2006, 2021, 5);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Warren Zeiders', 2014, 2020, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Victoria Monet', 2012, 2021, 6);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Mitski', 2015, 2021, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('JID Featuring 21 Savage & Baby Tate', 2018, 2022, 4);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Bad Bunny', 2017, 2021, 2);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Kenya Grace', 2010, 2121, 7);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Drake', 2021, 2021, 1);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Olivia Rodrigo', 2016, 2023, 5);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Drake Featuring Yeat', 2017, 2020, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Fuerza Regida & Marshmello', 2016, 2021, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Jessie Murph & Jelly Roll', 2013, 2021, 6);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Peso Pluma & Anitta', 2013, 2021, 2);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('HARDY', 2014, 2021, 6);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Dan + Shay', 2009, 2020, 5);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Meghan Trainor', 2013, 2020, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Karol G & Peso Pluma', 2019, 2020, 2);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Lil Tecca', 2006, 2021, 8);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Cody Johnson', 2019, 2020, 2);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Flo Milli', 2015, 2021, 4);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Parker McCollum', 2019, 2021, 2);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Chloe', 2012, 2020, 6);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Maluma & Carin Leon', 2010, 2021, 4);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Nicki Minaj Featuring Drake', 1965, 2018, 26);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Cher', 2019, 2020, 1);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('George Birge', 2018, 2021, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year, 
+number_of_albums) VALUES ('Juice WRLD, Eminem & benny blanco', 2019, 2021, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Zach Bryan Featuring The War And Treaty', 2015, 2021,
+5);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Sabrina Carpenter', 2015, 2019, 2);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Grupo Frontera & Grupo Firme', 2021, 2021, 1);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Jung Kook', 2018, 2021, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Morgan Wallen Featuring Eric Church', 2015, 2019, 2);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Calle 24 x Chino Pacas x Fuerza Regida', 2019, 2021, 3);
+INSERT INTO public.artists100 (artist, first_album_year, last_album_year,
+number_of_albums) VALUES ('Rod Wave', 2019, 2023, 5);
+--
+-- TOC entry 3621 (class 0 OID 16879)
+-- Dependencies: 215
+-- Data for Name: billboard100; Type: TABLE DATA; Schema: public; Owner: -
+--
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (1, 'Rockin'' Around The Christmas Tree', 'Rockin'' Around The
+Christmas Tree', 'Brenda Lee', 'Holiday', 1, 58);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (2, 'All I Want For Christmas Is You', 'Merry Christmas',
+'Mariah Carey', 'Holiday', 1, 65);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (3, 'Jingle Bell Rock', 'Jingle Bell Rock/Captian Santa
+Claus', 'Bobby Helms', 'Holiday', 3, 56);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (4, 'Last Christmas', 'Last-Christmas - Single', 'Wham!',
+'Holiday', 4, 38);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (5, 'A Holly Jolly Christmas', 'Have a Holly Jolly Christmas',
+'Burl Ives', 'Holiday', 4, 39);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (6, 'Last Christmas', 'Music from the Edge of Heaven',
+'Wham!', 'Holiday', 5, 39);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (7, 'A Holly Jolly Christmas', 'Have a Holly Jolly Christmas',
+'Burl Ives', 'Holiday', 7, 31);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (8, 'Last Christmas', 'Music from the Edge of Heaven',
+'Wham!', 'Holiday', 6, 32);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (9, 'Lovin On Me', 'Lovin On Me', 'Jack Harlow', 'Hip Hop', 1,
+7);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (10, 'Sleigh Ride', 'A Christmas Gift for You from Phil
+Spector', 'The Ronettes', 'Holiday', 8, 28);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (11, 'Santa Tell Me', 'Christmas Kisses', 'Ariana Grande',
+'Holiday', 11, 24);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (12, 'The Christmas Song (Merry Christmas To You)', 'The 
+Christmas Song', 'Nat King Cole', 'Holiday', 9, 44);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (13, 'Underneath The Tree', 'Wrapped in Red', 'Kelly
+Clarkson', 'Holiday', 11, 27);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (14, 'White Christmas', 'Merry Christmas', 'Bing Crosby With
+Ken Darby Singers & John Scott Trotter & His Orchestra', 'Holiday', 12, 35);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (15, 'Christmas (Baby Please Come Home)', 'A Christmas Gift
+for You from Phil Spector', 'Darlene Love', 'Holiday', 15, 22);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (16, 'Jingle Bells', 'A Jolly Christmas from Frank Sinatra',
+'Frank Sinatra With The Orchestra & Chorus Of Gordon Jenkins', 'Holiday', 16, 14);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (17, 'Deck The Halls', 'The Christmas Song', 'Nat King Cole',
+'Holiday', 16, 13);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (18, 'Blue Christmas', 'Elvis'' Christmas Album', 'Elvis
+Presley', 'Holiday', 18, 13);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (19, 'Cruel Summer', 'Lover', 'Taylor Swift', 'Pop', 1, 34);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (20, 'Santa Baby', 'Boogie Woogie Santa Claus', 'Eartha Kitt
+With Henri Rene And His Orchestra', 'Holiday', 20, 9);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (21, 'Here Comes Santa Claus (Right Down Santa Claus Lane)',
+'Rudolph the Red-Nosed Reindeer and Other Christmas Classics', 'Gene Autry',
+'Holiday', 21, 20);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (22, 'Run Rudolph Run', 'St. Louis to Liverpool', 'Chuck
+Berry', 'Holiday', 10, 22);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (23, 'It''s Beginning To Look A Lot Like Christmas',
+'Christmas', 'Michael Buble', 'Holiday', 19, 20);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (24, 'Greedy', 'Too Young to Be Sad', 'Tate McRae', 'Pop', 7,
+15);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (25, 'Little Saint Nick', 'The Beach Boys'' Christmas Album',
+'The Beach Boys', 'Holiday', 25, 8);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (26, 'Wonderful Christmastime', 'McCartney II', 'Paul
+McCartney', 'Holiday', 26, 13);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (27, 'It''s Beginning To Look A Lot Like Christmas',
+'Season''s Greetings from Perry Como', 'Perry Como And The Fontane Sisters With
+Mitchell Ayres And His Orchestra', 'Holiday', 12, 23);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (28, 'Please Come Home For Christmas', 'Eagles'' Greatest
+Hits, Vol. 2', 'Eagles', 'Holiday', 18, 15);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (29, 'Paint The Town Red', 'Planet Her', 'Doja Cat', 'Pop', 1,
+21);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (30, 'Santa Claus Is Comin'' To Town', 'Christmas Album',
+'Jackson 5', 'Holiday', 30, 11);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (31, 'I Remember Everything', 'Quiet, Heavy Dreams', 'Zach
+Bryan Featuring Kacey Musgraves', 'Country', 1, 18);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (32, 'Water', 'Tyla', 'Tyla', 'Pop', 10, 13);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (33, 'You''re A Mean One, Mr. Grinch', 'Dr. Seuss'' How the
+Grinch Stole Christmas!', 'Thurl Ravenscroft', 'Holiday', 31, 12);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (34, 'This Christmas', 'Donny Hathaway', 'Donny Hathaway',
+'Holiday', 34, 5);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (35, 'Agora Hills', 'Planet Her', 'Doja Cat', 'Pop', 14, 14);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (36, 'Last Night', 'Dangerous: The Double Album', 'Morgan
+Wallen', 'Country', 1, 48);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (37, 'Mistletoe', 'Under the Mistletoe', 'Justin Bieber',
+'Holiday', 11, 13);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (38, 'Happy Holiday / The Holiday Season', 'The Andy Williams
+Christmas Album', 'Andy Williams', 'Holiday', 18, 19);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (39, 'Christmastime Is Here', 'A Charlie Brown Christmas',
+'Vince Guaraldi Trio', 'Holiday', 39, 4);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (40, 'Like It''s Christmas', 'Like It''s Christmas - Single',
+'Jonas Brothers', 'Holiday', 40, 7);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (41, 'Have Yourself A Merry Little Christmas', 'Christmas',
+'Michael Buble', 'Holiday', 41, 4);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (42, 'Happy Xmas (War Is Over)', 'Some Time in New York City',
+'John & Yoko/The Plastic Ono Band With The Harlem Community Choir', 'Holiday', 38,
+6);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (43, 'I Saw Mommy Kissing Santa Claus', 'Jackson 5 Christmas
+Album', 'Jackson 5', 'Holiday', 43, 1);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (44, 'Thinkin'' Bout Me', 'Dangerous: The Double Album',
+'Morgan Wallen', 'Country', 7, 43);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (45, 'Rudolph The Red-Nosed Reindeer', 'Rudolph the Red-Nosed
+Reindeer and Other Christmas Classics', 'Gene Autry & The Pinafores', 'Holiday',
+16, 27);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (46, 'Merry Christmas', 'Ed Sheeran - Elton John: Merry
+Christmas - Single', 'Ed Sheeran & Elton John', 'Holiday', 42, 7);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (47, 'Fast Car', 'What You See Is What You Get', 'Luke Combs',
+'Country', 2, 40);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (48, 'Lose Control', 'Unlearning EP', 'Teddy Swims', 'Pop',
+39, 20);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (49, 'Is It Over Now? (Taylor''s Version) [From The Vault]',
+'Red (Taylor''s Version)', 'Taylor Swift', 'Pop', 1, 9);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (50, '(There''s No Place Like) Home For The Holidays (1954)',
+'Season''s Greetings from Perry Como', 'Perry Como With Mitchell Ayers And His
+Orchestra', 'Holiday', 50, 1);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos, 
+wks_on_chart) VALUES (51, 'Lil Boo Thang', 'Lil Boo Thang - Single', 'Paul
+Russell', 'Pop', 23, 15);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (52, 'Rich Baby Daddy', 'Certified Lover Boy', 'Drake
+Featuring Sexyy Red & SZA', 'Hip-Hop', 11, 12);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (53, 'FTCU', 'Pink Friday', 'Nicki Minaj', 'Hip-Hop', 42, 3);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (54, 'Stick Season', 'Stick Season - Single', 'Noah Kahan',
+'Alternative', 31, 13);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (55, 'Everybody', 'Beam Me Up Scotty', 'Nicki Minaj Featuring
+Lil Uzi Vert', 'Pop', 26, 3);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (56, 'White Horse', 'Starting Over', 'Chris Stapleton',
+'Country', 12, 23);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (57, 'First Person Shooter', 'Certified Lover Boy', 'Drake
+Featuring J. Cole', 'Hip-Hop', 1, 12);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (58, 'Used To Be Young', 'Plastic Hearts', 'Miley Cyrus',
+'Pop', 8, 18);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (59, 'Houdini', 'Future Nostalgia: The Moonlight Edition',
+'Dua Lipa', 'Pop', 11, 7);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (60, 'Good Good', 'Good Good - Single', 'Usher, Summer Walker
+& 21 Savage', 'R&B', 25, 20);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (61, 'World On Fire', 'Kinfolk 2: See The Birds', 'Nate
+Smith', 'Country', 47, 9);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (62, 'La Diabla', 'La Diabla - Single', 'Xavi', 'Regional
+Mexican', 62, 2);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (63, 'Pretty Little Poison', 'Pretty Little Poison - Single',
+'Warren Zeiders', 'Country', 46, 16);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (64, 'On My Mama', 'Jaguar', 'Victoria Monet', 'R&B', 48, 15);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (65, 'My Love Mine All Mine', 'Laurel Hell', 'Mitski',
+'Alternative', 26, 14);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (66, 'Exes', 'Too Young to Be Sad', 'Tate McRae', 'Pop', 34,
+6);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (67, 'Surround Sound', 'The Forever Story', 'JID Featuring 21
+Savage & Baby Tate', 'Hip-Hop', 61, 7);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (68, 'Monaco', 'El Último Tour Del Mundo', 'Bad Bunny',
+'Spanish', 5, 11);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (69, 'Strangers', 'Strangers - Single', 'Kenya Grace',
+'Dance', 52, 15);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (70, 'You Broke My Heart', 'Certified Lover Boy', 'Drake',
+'Hip-Hop', 11, 6);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (71, 'Get Him Back!', 'SOUR', 'Olivia Rodrigo', 'Pop', 11, 
+16);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (72, 'IDGAF', 'Certified Lover Boy', 'Drake Featuring Yeat',
+'Hip-Hop', 2, 12);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (73, 'Harley Quinn', 'Harley Quinn - Single', 'Fuerza Regida &
+Marshmello', 'Rock', 40, 8);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (74, 'Wild Ones', 'Wild Ones - Single', 'Jessie Murph & Jelly
+Roll', 'Country', 42, 12);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (75, 'Bellakeo', 'Bellakeo - Single', 'Peso Pluma & Anitta',
+'Reggaeton', 71, 2);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (76, 'Truck Bed', 'A Rock', 'HARDY', 'Country', 55, 28);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (77, 'Save Me The Trouble', 'Good Things', 'Dan + Shay',
+'Country', 73, 9);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (78, 'Jingle Bells', 'A Very Trainor Christmas', 'Meghan
+Trainor', 'Holiday', 78, 2);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (79, 'La Victima', 'La Victima - Single', 'Xavi', 'Spanish',
+79, 2);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (80, 'Where The Wild Things Are', 'What You See Ain''t Always
+What You Get', 'Luke Combs', 'Country', 78, 6);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (81, 'Qlona', 'Qlona - Single', 'Karol G & Peso Pluma', 'Pop',
+28, 20);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (82, 'You''re Losing Me (From The Vault)', 'Red (Taylor''s
+Version)', 'Taylor Swift', 'Pop', 27, 5);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (83, '500lbs', '500lbs - Single', 'Lil Tecca', 'Hip-Hop', 51,
+14);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (84, 'The Painter', 'The Double Album', 'Cody Johnson',
+'Country', 55, 12);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (85, 'Never Lose Me', 'Ice Baby', 'Flo Milli', 'Hip-Hop', 84,
+2);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (86, 'Burn It Down', 'Gold Chain Cowboy', 'Parker McCollum',
+'Country', 77, 10);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (87, 'Winter Wonderland', 'Cover', 'Chloe', 'N/A', 87, 2);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (88, 'Segun Quien', 'Don Juan', 'Maluma & Carin Leon',
+'Spanish', 68, 13);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (89, 'Needle', 'Pink Friday 2', 'Nicki Minaj Featuring Drake',
+'R&B', 34, 3);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (90, 'DJ Play A Christmas Song', 'Christmas', 'Cher',
+'Holiday', 90, 2);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (91, 'Mind On You', 'Mind on You', 'George Birge', 'Country',
+88, 2);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (92, 'Lace It', 'The Party Never Ends', 'Juice WRLD, Eminem &
+benny blanco', 'Hip-Hop', 85, 2);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (93, 'Hey Driver', 'Zach Bryan', 'Zach Bryan Featuring The War
+And Treaty', 'Counrty', 14, 18);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (94, 'Feather', 'Emails I Can''t Send', 'Sabrina Carpenter',
+'Dance-Pop', 90, 4);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (95, 'Can''t Catch Me Now', 'The Hunger Games: The Ballad of
+Songbirds & Snakes', 'Olivia Rodrigo', 'Folk Rock', 56, 8);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (96, 'El Amor de Su Vida', 'El Comienzo', 'Grupo Frontera &
+Grupo Firme', 'Spanish', 68, 16);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (97, 'Standing Next To You', 'Golden', 'Jung Kook', 'Pop', 5,
+8);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (98, 'Man Made A Bar', 'Single', 'Morgan Wallen Featuring Eric
+Church', 'Country', 15, 14);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (99, 'Que Onda', 'Gueri', 'Calle 24 x Chino Pacas x Fuerza
+Regida', 'Alternative Rock', 61, 13);
+INSERT INTO public.billboard100 (rank, song, album, artist, genre, peak_pos,
+wks_on_chart) VALUES (100, 'Great Gatsby', 'Nostalgia', 'Rod Wave', 'Rap', 30, 14);
+--
+-- TOC entry 3477 (class 2606 OID 16930)
+-- Name: albums100 albums100_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+ALTER TABLE ONLY public.albums100
+ ADD CONSTRAINT albums100_pkey PRIMARY KEY (album);
+--
+-- TOC entry 3475 (class 2606 OID 16900)
+-- Name: artists100 artists100_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+ALTER TABLE ONLY public.artists100
+ ADD CONSTRAINT artists100_pkey PRIMARY KEY (artist);
+--
+-- TOC entry 3473 (class 2606 OID 16885)
+-- Name: billboard100 billboard100_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+ALTER TABLE ONLY public.billboard100
+ ADD CONSTRAINT billboard100_pkey PRIMARY KEY (rank);
+-- Completed on 2024-05-07 13:31:18 EDT
+--
+-- PostgreSQL database dump complete
+--
